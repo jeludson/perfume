@@ -1,0 +1,51 @@
+write next.js , react and node.js script to make a advanced website in the give configuration
+the colours must be  --bg:#050508;--surface:#0c0c14;--card:#10101c;
+  --accent:#00f5c4;--accent2:#ff3d6b;--accent3:#7b5cfa;
+  --text:#eeeef5;--muted:#6b6b85;--border:rgba(255,255,255,0.07); for bg dark blue in smooth and some light green like blue for main and it is for a big prefume brand in the top there must be animated promo banner for new prefume and the anomation must be like the perfume in the stage with focus light after scroll it should show the parallel effect
+{
+  "project_metadata": {
+    "brand_name": "Premium Elite",
+    "theme": {
+      
+      "typography": "Inter, Playfair Display"
+    },
+    "stack": {
+      "frontend": "Next.js 14 (App Router), Tailwind CSS",
+      "animations": "Framer Motion, Three.js (for Stage Effects)",
+      "backend": "Node.js , Prisma ORM",
+      "database": "mongo db",
+      "auth": "NextAuth.js (Google & Credentials)"
+    }
+  },
+  "ui_components": {
+    "hero_section": {
+      "type": "3D_Stage_Canvas",
+      "animation": "Spotlight_Focus",
+      "properties": {
+        "lighting": "Volumetric Point Lights",
+        "transition": "Smooth Spring Physics",
+        "description": "3D product model rotating on a blue-grey pedestal with white ambient backlighting."
+      }
+    },
+    "navigation": ["Mega Menu", "User Profile Dropdown", "Persistent Cart Sidebar"]
+  },
+  "data_models": {
+    "User": {
+      "id": "UUID",
+      "full_name": "String",
+      "email": "String (Unique)",
+      "role": ["USER", "ADMIN"],
+      "auth_provider": ["Email", "Google"],
+      "order_history": "Relation[]"
+    },
+    "Product": {
+      "id": "UUID",
+      "name": "String",
+      "description": "RichText",
+      "price": "Decimal",
+      "stock": "Integer",
+      "images": "URL[]",
+      "category": "String"
+    }
+  }
+}
