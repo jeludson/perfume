@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { prisma } from "@/lib/prisma"
 import bcrypt from "bcrypt"
 import { Adapter } from "next-auth/adapters"
+import { DefaultSession, DefaultUser } from "next-auth"
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -14,8 +15,11 @@ declare module "next-auth" {
     } & DefaultSession["user"]
   }
 
-  interface User extends NextAuthUser {
-    role: string
+  interface Session {
+    user: {
+      id: string
+      role: string
+    } & DefaultSession["user"]
   }
 }
 
